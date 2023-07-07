@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;700&display=swap'); /* Importing font from Google. */
+
+* {
+    font-family: 'Kanit', sans-serif;
+    color: white;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+body {
+    padding: 3%;
+    background-color: rgb(55, 52, 52);
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button {
+    background-color: black;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.timer {
+    font-size: 24px;
+}
+
+.section {
+    display: none;
+    margin: 0 auto;
+    margin-top: 7.5%;
+    width: 75%;
+    height: auto;
+}
+
+.active {
+    display: block;
+}
+
+.start-game {
+    text-align: center;
+}
+
+.start-game button {
+    margin-top: 50px;
+}
