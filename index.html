@@ -9,12 +9,12 @@
 </head>
 <body>
     <header>
-        <button class = 'leaderboard' id = 'leaderboard'>View high scores</button>
+        <button class = 'view-leaderboard' id = 'view-leaderboard'>View high scores</button>
         <h1>Coding Quiz</h1>
         <h2 class = 'timer'>Timer: <span id = 'timer'>60</span></h2>
     </header>
 
-    <div class = 'start-game active section'>
+    <div class = 'start-game active section' id = 'start-game'>
         <p class = 'start-text'>The quiz will start when you press the 'Start Quiz' button. Answering a question correctly will move you to the next question with no penalty;
             answer incorrectly and you will still move on but also lose 5 seconds of time. Your final score upon quiz completion is your remaining time. Are you ready? 
         </p>
@@ -95,6 +95,17 @@
 
     <div class = 'game-end section' id = 'game-won'>
         <h2>You won! Your score was: <span id = 'score'></span></h2>
+        <form id="win-form" class = 'win-form'>
+            <input type="text" class="form-input w-100" id="win-input" name="win-input" placeholder="Enter your initials" />
+            <button id = 'win-submit'>Submit</button>
+        </form>
+    </div>
+
+    <div class = 'leaderboard-div section' id = 'leaderboard-div'> <!--The leaderboard has to have an extra div around it so that when we append user scores to it, they still appear above the button and not beneath it.-->
+        <div class = 'leaderboard' id = 'leaderboard'>
+            <h2>Leaderboard</h2>
+        </div>
+        <button id = 'back'>Back</button>
     </div>
     
     <div class = 'game-end section' id = 'game-lost'>

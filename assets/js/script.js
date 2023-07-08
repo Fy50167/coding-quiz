@@ -5,6 +5,7 @@ var startGame = $('#start-game');
 var currentTextContent = 0; // Equating each text state/question to a number to determine what gets displayed on the screen.
 var contentSections = document.getElementsByClassName('section');
 var answers = document.getElementsByClassName('button-answer'); // Getting all answers to add event listener that checks valid answer and goes to next question.
+var highScores = []; // Currently empty array, will contain high scores to display on leaderboard.
 
 // Function to remove whichever section is active. Will then make new section active after.
 function removeAllSections() {
@@ -51,7 +52,7 @@ function changeContent() {
         removeAllSections();
         $('#game-won').addClass('active');
         $('#score').text(timerCount);
-    };
+    }
 }
 
 // Adding event listeners that check for data attribute to determine if answer is correct.
@@ -72,6 +73,28 @@ for (answer of answers) {
     })
     }
 };
+
+$('#win-form').on('submit', function(event) { // Append user score and initials to leaderboard on form submission.
+    event.preventDefault(); // Prevent page reload.
+    removeAllSections();
+    var userScore = $('#win-input').val() + ': ' + $('#score').text();
+    var userScoreContainer = $('<p>').text(userScore);
+    $('#leaderboard-div').addClass('active');
+    $('#leaderboard').append(userScoreContainer);
+});
+
+$('#view-leaderboard').on('click', function() { // Event listener to view leaderboard at any time.
+    removeAllSections();
+    $('#leaderboard-div').addClass('active');
+})
+
+$('#back').on('click', function() {
+    removeAllSections();
+    $('#start-game').addClass('active');
+    timerCount = 60; // Reset timer.
+    timerElement.text(timerCount);
+})
+
 
 function gameStart() {
     currentTextContent = 1;

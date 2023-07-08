@@ -76,3 +76,46 @@ button {
     background-color: white;
     color: black;
 }
+
+.form-input {
+    font-size: 25px;
+    color: black;
+}
+
+.form-input::placeholder {
+    font-size: 25px;
+}
+
+.win-form {
+    margin-top: 15px;
+}
+
+.leaderboard {
+    text-align: center;
+}
+
+.leaderboard h2 {
+    font-size: 40px;
+}
+
+.leaderboard p {
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.leaderboard-div button {
+    margin: 0 auto;
+    display: block;
+}
+
+
+@media screen and (max-width: 770px) { /* Arbitrary size chosen to start mobile-responsive styling. */
+
+    .section {
+        width: 100%;
+    }
+
+    .view-leaderboard { /* Only shrinking this button on mobile since it's the only one that takes up too much space. */
+        font-size: 20px;
+    }
+}
