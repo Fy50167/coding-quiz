@@ -102,5 +102,5 @@ function gameStart() {
     startTimer();
 }
 
-startGame.on('click', gameStart);
+startGame.on('click', gameStart); // Start quiz.
 

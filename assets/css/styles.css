@@ -108,11 +108,19 @@ button {
     display: block;
 }
 
+.margin-top {
+    margin-top:15px;
+}
 
-@media screen and (max-width: 770px) { /* Arbitrary size chosen to start mobile-responsive styling. */
+
+@media screen and (max-width: 770px) { /* Arbitrary size chosen to start mobile-responsive styling. Layout already works fairly well on mobile so minimal changes needed. */
 
     .section {
         width: 100%;
+    }
+
+    header h1 {
+        text-align: center;
     }
 
     .view-leaderboard { /* Only shrinking this button on mobile since it's the only one that takes up too much space. */

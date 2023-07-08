@@ -14,7 +14,7 @@
         <h2 class = 'timer'>Timer: <span id = 'timer'>60</span></h2>
     </header>
 
-    <div class = 'start-game active section' id = 'start-game'>
+    <section class = 'start-game active section' id = 'start-game'>
         <p class = 'start-text'>The quiz will start when you press the 'Start Quiz' button. Answering a question correctly will move you to the next question with no penalty;
             answer incorrectly and you will still move on but also lose 5 seconds of time. Your final score upon quiz completion is your remaining time. Are you ready? 
         </p>
@@ -22,9 +22,9 @@
         <button id = 'start-game'>
             Start Quiz
         </button>
-    </div>
+    </section>
 
-    <div class = 'section' id = 'question-1'>
+    <section class = 'section' id = 'question-1'>
         <h3>Question #1</h3>
         <p>What does HTML stand for?</p>
 
@@ -45,9 +45,9 @@
                 D. Hyper Text Markup Leveler
             </button>
         </div>
-    </div>
+    </section>
 
-    <div class = 'section' id = 'question-2'>
+    <section class = 'section' id = 'question-2'>
         <h3>Question #2</h3>
         <p>Commonly used data types DO NOT include:</p>
 
@@ -68,9 +68,9 @@
                 D. Alerts
             </button>
         </div>
-    </div>
+    </section>
 
-    <div class = 'section' id = 'question-3'>
+    <section class = 'section' id = 'question-3'>
         <h3>Question #3</h3>
         <p>The condition in an if/else statement is enclosed with:</p>
 
@@ -91,26 +91,26 @@
                 D. Square Brackets
             </button>
         </div>
-    </div>
+    </section>
 
-    <div class = 'game-end section' id = 'game-won'>
+    <section class = 'game-end section' id = 'game-won'>
         <h2>You won! Your score was: <span id = 'score'></span></h2>
         <form id="win-form" class = 'win-form'>
             <input type="text" class="form-input w-100" id="win-input" name="win-input" placeholder="Enter your initials" />
-            <button id = 'win-submit'>Submit</button>
+            <button class = 'margin-top' id = 'win-submit'>Submit</button>
         </form>
-    </div>
+    </section>
 
-    <div class = 'leaderboard-div section' id = 'leaderboard-div'> <!--The leaderboard has to have an extra div around it so that when we append user scores to it, they still appear above the button and not beneath it.-->
+    <section class = 'leaderboard-div section' id = 'leaderboard-div'> <!--The leaderboard has to have an extra div around it so that when we append user scores to it, they still appear above the button and not beneath it.-->
         <div class = 'leaderboard' id = 'leaderboard'>
             <h2>Leaderboard</h2>
         </div>
-        <button id = 'back'>Back</button>
-    </div>
+        <button class = 'margin-top' id = 'back'>Back</button>
+    </section>
     
-    <div class = 'game-end section' id = 'game-lost'>
+    <section class = 'game-end section' id = 'game-lost'>
         <h2>You ran out of time. Refresh the page and try again!</h2>
-    </div>
+    </section>
     
     <!--Adding jQuery to get some more practice using it even though it's technically part of the next module.-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
