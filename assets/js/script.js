@@ -2,9 +2,9 @@ var timerElement = $('#timer');
 var timer;
 var timerCount = 60;
 var startGame = $('#start-game');
-var hasWon = false;
 var currentTextContent = 0; // Equating each text state/question to a number to determine what gets displayed on the screen.
 var contentSections = document.getElementsByClassName('section');
+var answers = document.getElementsByClassName('button-answer'); // Getting all answers to add event listener that checks valid answer and goes to next question.
 
 // Function to remove whichever section is active. Will then make new section active after.
 function removeAllSections() {
@@ -16,25 +16,26 @@ function removeAllSections() {
 // Function that occurs when timer reaches 0.
 function loseQuiz() {
     removeAllSections();
-    $('game-lost').addClass('active');
+    $('#game-lost').addClass('active');
 }
 
+function checkLoss() {
+    if (timerCount === 0) {
+        clearInterval(timer);
+        loseQuiz();
+    }
+}
+
+// Function for timer.
 function startTimer() {
     timer = setInterval(function() {
+        checkLoss();
         timerCount--;
         timerElement.text(timerCount);
-        if (timerCount >= 0) {
-            if (hasWon && timerCount > 0) {
-            clearInterval(timer);
-            }
-        }
-        if (timerCount === 0) {
-            clearInterval(timer);
-            loseQuiz();
-        }
     }, 1000);
 }
 
+// Changes the currently displayed content based on earlier initialized variable. 
 function changeContent() {
     if (currentTextContent === 1) {
         removeAllSections();
@@ -46,11 +47,31 @@ function changeContent() {
         removeAllSections();
         $('#question-3').addClass('active');
     } else if (currentTextContent === 4) {
-
-    } else if (currentTextContent === 5) {
-
-    } 
+        clearInterval(timer);
+        removeAllSections();
+        $('#game-won').addClass('active');
+        $('#score').text(timerCount);
+    };
 }
+
+// Adding event listeners that check for data attribute to determine if answer is correct.
+for (answer of answers) {
+    if (answer.getAttribute('data')==='incorrect') {
+        answer.addEventListener('click', function() {
+            timerCount = timerCount - 5;
+            timerElement.text(timerCount);
+            checkLoss();
+            currentTextContent++;
+            changeContent();
+        })
+    } else {
+        answer.addEventListener('click', function() {
+        checkLoss();
+        currentTextContent++;
+        changeContent();
+    })
+    }
+};
 
 function gameStart() {
     currentTextContent = 1;

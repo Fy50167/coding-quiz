@@ -51,3 +51,28 @@ button {
 .start-game button {
     margin-top: 50px;
 }
+
+.game-end {
+    text-align: center;
+    font-size: 40px;
+}
+
+.section p {
+    font-size: 20px;
+}
+
+.button-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-answer {
+    margin: 10px 0;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.button-answer:hover {
+    background-color: white;
+    color: black;
+}
